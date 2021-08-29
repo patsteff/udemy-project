@@ -7,9 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'project-app';
-  loadedSelected = 'recipes';
 
-  onNavigate(selected: string) {
-    this.loadedSelected = selected;
-  }
 }
