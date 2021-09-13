@@ -11,19 +11,24 @@ export class RecipeService {
 
 
   private recipes: Recipe[] = [
-    new Recipe('Tasty Schnitzel', 'This is simply a test', 'https://live.staticflickr.com/8283/7717719952_5377f33781_b.jpg', [
-      new Ingredient("Meat", 1),
-      new Ingredient("Pommes", 20)
-    ]),
-    new Recipe('A second Test Recipe', 'Second recipe', 'https://live.staticflickr.com/8283/7717719952_5377f33781_b.jpg', [
-      new Ingredient("Tomato", 1),
-      new Ingredient("Salat", 2),
-      new Ingredient("Meat", 2),
+    /*     new Recipe('Tasty Schnitzel', 'This is simply a test', 'https://live.staticflickr.com/8283/7717719952_5377f33781_b.jpg', [
+          new Ingredient("Meat", 1),
+          new Ingredient("Pommes", 20)
+        ]),
+        new Recipe('A second Test Recipe', 'Second recipe', 'https://live.staticflickr.com/8283/7717719952_5377f33781_b.jpg', [
+          new Ingredient("Tomato", 1),
+          new Ingredient("Salat", 2),
+          new Ingredient("Meat", 2),
 
-    ])
+        ]) */
   ];
 
   constructor(private shoppingListService: ShoppingListService) { }
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
+  }
 
   getRecipes() {
     // to have copy of array
